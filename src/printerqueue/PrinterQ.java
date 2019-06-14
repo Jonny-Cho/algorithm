@@ -15,7 +15,6 @@ class Solution {
 		int answer = 0;
 		LinkedList<HashMap<Integer, Integer>> q = new LinkedList<>();
 		LinkedList<HashMap<Integer, Integer>> answerQ = new LinkedList<>();
-		
 		LinkedHashMap<Integer, Integer> hm;
 		
 		for(int i=0; i<priorities.length; i++) {
