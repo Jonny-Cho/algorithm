@@ -19,7 +19,6 @@ public class MapSortTest {
 	}
 	
 	public static LinkedHashMap<String, Integer> sortDescByValue(Map<String, Integer> map){
-		// value 내림차순으로 정렬하고, value가 같으면 key 오름차순으로 정렬
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
         
 //        System.out.println(list);
@@ -32,7 +31,6 @@ public class MapSortTest {
             }
         });
         
-        // 순서유지를 위해 LinkedHashMap을 사용
         LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>(); 
         for(Iterator<Map.Entry<String, Integer>> iter = list.iterator(); iter.hasNext();){
             Map.Entry<String, Integer> entry = iter.next();
