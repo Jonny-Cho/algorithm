@@ -1,9 +1,7 @@
 package functiondeploy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
-// 프로그래머스 기능개발
 // https://programmers.co.kr/learn/courses/30/lessons/42586
 public class FunctionDeploy {
 	public static void main(String[] args) {
@@ -19,28 +17,37 @@ public class FunctionDeploy {
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         int[] answer;
-        
         ArrayList<Integer> al = new ArrayList<>();
         int[] tempArr = new int[progresses.length];
+        
         for(int i=0; i<progresses.length; i++) {
-        	tempArr[i] = (99 - progresses[i]) / speeds[i] + 1;
+        	tempArr[i] = (99 - progresses[i]) / speeds[i] + 1 ;
         }
-
-        System.out.println(Arrays.toString(tempArr));
-
-        for(int i=0; i<tempArr.length; i++) {
+        
+//        System.out.println(Arrays.toString(tempArr));
+        
+        loop : for(int i=0; i<tempArr.length; i++) {
         	int count = 1;
         	for(int j=i+1; j<tempArr.length; j++) {
+//        		System.out.println("tempArr[i] = " + tempArr[i] + ", tempArr[j] = " + tempArr[j]);
         		if(tempArr[i] >= tempArr[j]) {
         			count++;
+        			if(j == tempArr.length-1) {
+        				al.add(count);
+        				break loop;
+        			}
         		} else {
         			al.add(count);
         			i = j;
+        			count = 1;
         		}
+//        		System.out.println("count = " + count);
+//        		System.out.println(al);
         	}
         	
-        	if(i == tempArr.length - 1) {
+        	if(count == tempArr.length - i) {
         		al.add(count);
+        		break;
         	}
         }
         
@@ -50,7 +57,6 @@ class Solution {
         for(int i=0; i<answer.length; i++) {
         	answer[i] = al.get(i);
         }
-        
         return answer;
     }
 }
