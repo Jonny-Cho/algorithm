@@ -9,7 +9,8 @@ public class Primenumber {
 		Solution s = new Solution();
 		// 3~50개 이하 배열, 각원소 1~1000 자연수, 중복x
 //		System.out.println(s.solution(new int[] {1, 2, 3, 4})); // 1 (1+2+4)
-		System.out.println(s.solution(new int[] {1, 2, 7, 6, 4})); // 4 (124, 146, 247, 467)
+//		System.out.println(s.solution(new int[] {1, 2, 7, 6, 4})); // 4 (124, 146, 247, 467)
+		System.out.println(s.solution(new int[] {1, 2, 3}));
 	}
 
 }
